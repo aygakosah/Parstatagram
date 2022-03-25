@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    app:itemIconSize="50dp"
+    >
+
+    <item
+        android:id="@+id/takePic"
+        android:icon="@drawable/ic_camera_foreground"
+        android:title="Pic"
+        app:showAsAction="always" />
+</menu>

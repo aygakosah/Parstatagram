@@ -31,10 +31,17 @@ class PostAdapter( val posts:
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val post: Post = posts.get(position)
         holder.tvPostDescription.text = post.getDescription()
+        holder.tvUserName.text = post.getUser()?.username
         val photofile: ParseFile? = post.getImage()
+        val photoFile2: ParseFile? = post.getUser()?.getParseFile("ProfileImage")
         if (photofile != null) {
             val imageUrl: String = photofile.getUrl()
             Glide.with(holder.itemView).load(imageUrl).into(holder.ivPostImage)
+        }
+
+        if(photoFile2 != null){
+            val imageUrl2: String? = photoFile2?.getUrl()
+            Glide.with(holder.itemView).load(imageUrl2).into(holder.ivProfileImage)
         }
 
     }
@@ -46,6 +53,8 @@ class PostAdapter( val posts:
     inner class ViewHolder(ItemView: View): RecyclerView.ViewHolder(ItemView){
         val  ivPostImage = itemView.findViewById<ImageView>(R.id.ivPostImage)
         val  tvPostDescription = itemView.findViewById<TextView>(R.id.tvPostDescription)
+        val  ivProfileImage = itemView.findViewById<ImageView>(R.id.ivProfileImage)
+        val  tvUserName = itemView.findViewById<TextView>(R.id.tvUserName)
     }
 
 }

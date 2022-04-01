@@ -4,9 +4,22 @@
     app:itemIconSize="50dp"
     >
 
+
+
     <item
-        android:id="@+id/takePic"
-        android:icon="@drawable/ic_camera_foreground"
-        android:title="Pic"
+        android:id="@+id/action_home"
+        android:icon="@drawable/instagram_home_outline_24"
+        android:title="Home"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_compose"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="Compose"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_profile"
+        android:icon="@drawable/ic_person"
+        android:title="profile"
         app:showAsAction="always" />
 </menu>
